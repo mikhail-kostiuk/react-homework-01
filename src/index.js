@@ -9,6 +9,13 @@ const presidents = [
   'William Henry Harrison'
 ];
 
+const nextPresidents = [
+  { firstName: 'John', lastName: 'Tyler', presidentIndex: 10 },
+  { firstName: 'James K.', lastName: 'Polk', presidentIndex: 11 },
+  { firstName: 'Zachary', lastName: 'Taylor', presidentIndex: 12 },
+  { firstName: 'Millard', lastName: 'Fillmore', presidentIndex: 13 }
+];
+
 ReactDOM.render(
   <React.StrictMode>
     <ul>
@@ -25,6 +32,15 @@ ReactDOM.render(
       {presidents.map(president => (
         <li key={president}>{president}</li>
       ))}
+    </ul>
+    <ul>
+      {nextPresidents.map(president => {
+        return president.presidentIndex % 2 ? (
+          <li
+            key={president.presidentIndex}
+          >{`${president.lastName}, ${president.firstName}, ${president.presidentIndex}-th`}</li>
+        ) : null;
+      })}
     </ul>
   </React.StrictMode>,
   document.getElementById('root')
