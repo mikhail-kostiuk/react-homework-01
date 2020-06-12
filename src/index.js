@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
+const presidents = [
+  'Andrew Jackson',
+  'Martin Van Buren',
+  'William Henry Harrison'
+];
+
 ReactDOM.render(
   <React.StrictMode>
     <ul>
@@ -15,6 +21,11 @@ ReactDOM.render(
       <li>James Monroe</li>
       <li>John Quincy Adams</li>
     </ol>
+    <ul>
+      {presidents.map(president => (
+        <li key={president}>{president}</li>
+      ))}
+    </ul>
   </React.StrictMode>,
   document.getElementById('root')
 );
