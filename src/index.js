@@ -28,7 +28,14 @@ ReactDOM.render(
       <li>James Monroe</li>
       <li>John Quincy Adams</li>
     </ol>
-    <ul>
+    <ul
+      style={{
+        backgroundColor: '#ddd',
+        paddingTop: '1em',
+        paddingBottom: '1em',
+        fontWeight: 'bold'
+      }}
+    >
       {presidents.map(president => (
         <li key={president}>{president}</li>
       ))}
