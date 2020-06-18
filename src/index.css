@@ -2,7 +2,21 @@ ul li:first-child::first-letter {
   color: #aaa;
   font-weight: bold;
 }
+
 .events li > * {
   display: block;
   margin-top: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+}
+
+button {
+  width: 60px;
 }

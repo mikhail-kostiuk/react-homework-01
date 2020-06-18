@@ -67,6 +67,12 @@ function getDaytime(date) {
   return 'Ночь';
 }
 
+function handleSubmit(event) {
+  event.preventDedault();
+
+  // fetch('https://postman-echo.com/post', {method: 'POST', body: data});
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <ul>
@@ -123,6 +129,30 @@ ReactDOM.render(
           );
         })}
     </ul>
+
+    <form action="https://postman-echo.com/post" method="POST">
+      <label>
+        Имя:
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        Пароль:
+        <input type="password" name="password" minLength={4} required />
+      </label>
+      <label htmlFor="basic">
+        Базовый тариф
+        <input type="radio" value="basic" name="plan" defaultChecked={true} />
+      </label>
+      <label>
+        Премиум тариф
+        <input type="radio" value="premium" name="plan" />
+      </label>
+      <label>
+        Присылайте мне новости на почту
+        <input type="checkbox" name="news" defaultChecked={true} />
+      </label>
+      <button type="submit">Купить</button>
+    </form>
   </React.StrictMode>,
   document.getElementById('root')
 );
