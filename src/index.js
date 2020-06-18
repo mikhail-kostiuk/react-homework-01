@@ -117,7 +117,7 @@ ReactDOM.render(
           const date = new Date(event.date);
 
           return (
-            <li style={date < Date.now() ? { opacity: '0.5' } : null}>
+            <li style={date < Date.now() ? { opacity: '0.5' } : null} key={event.title}>
               <a href={`https://www.facebook.com/events/${event.id}/`}>
                 {event.title}
               </a>
